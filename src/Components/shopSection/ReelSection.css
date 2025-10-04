@@ -1,0 +1,8 @@
+.reel-card {
+  transition: transform 0.3s;
+}
+
+.reel-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
