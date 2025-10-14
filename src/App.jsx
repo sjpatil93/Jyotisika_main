@@ -38,7 +38,7 @@ import ManglikDosha  from './Components/FreeKundli/ManglikDosha';
 import KaalSarpaDosha  from './Components/FreeKundli/KaalSarpaDosha';
 import SadheSati  from './Components/FreeKundli/SadheSati';
 import BhavaKundli from './Components/FreeKundli/BhavaKundli';
-const AppContent = () => {
+const App = () => {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -149,14 +149,4 @@ const AppContent = () => {
     </>
   );
 };
-
-
-const App = () => {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  );
-};
-
 export default App;
