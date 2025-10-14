@@ -20,6 +20,7 @@ const OnlineAstrologer = () => {
       .catch((err) => console.error("API Error:", err));
   }, []);
 
+  
   return (
     <div style={{ backgroundColor: "#fefaea", padding: "20px" }}>
       <h1 className="highlight text-center pt-5 ">Astrologer</h1>
@@ -40,8 +41,8 @@ const OnlineAstrologer = () => {
                     style={{borderRadius:"50%",height:"105px",width:"100%",padding:"10px"}}
                   />
                 </div>
-                <div className="col-6 p-3">
-                  <h5 className="card-title">{astro.name}</h5>
+                <div className="col-6 ">
+                  <h5 className="card-title ">{astro.name}</h5>
                   <h6 className="" style={{color:"#FD8B07"}}>Kundli matching , Horoscope...</h6>
                 </div>
                 <div className="card-body">

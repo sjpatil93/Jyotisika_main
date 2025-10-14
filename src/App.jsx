@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/css/bootstrap.min.css"; 
+
 import Navbar from './Components/CommanNavbar';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
@@ -20,7 +22,22 @@ import Panchange from './NavbarLinks/Panchange';
 import Kp from './NavbarLinks/Kp';
 import Festival from './NavbarLinks/Festival';
 import BookPuja from './NavbarLinks/BookPuja';
-import MobPooja  from './NavbarLinks/MobPooja'
+import MobPooja from './NavbarLinks/MobPooja';
+import FestivalDetails from './NavbarLinks/FestivalsDetails';
+import ShowAllastrologer from './ZodiacLinks/ShowAllastrologer';
+import AscendantReport from './Components/FreeKundli/AscendantReport';
+import BasicAstrology from './NavbarLinks/FreeKundli';
+import PlanetaryPosition from './Components/FreeKundli/PlanetaryPosition';
+import Vishmotterydash from './Components/FreeKundli/VimshottariDasha';
+import GemstoneRecommendation from './Components/FreeKundli/GemstoneRecommendation';
+import CompositeFriendship from './Components/FreeKundli/CompositeFriendship';
+import Shadbala from './Components/FreeKundli/Shadbala';
+import YoginiDasha from './Components/FreeKundli/YoginiDasha';
+import HoroscopeCharts from './Components/FreeKundli/HoroscopeCharts';
+import ManglikDosha  from './Components/FreeKundli/ManglikDosha';
+import KaalSarpaDosha  from './Components/FreeKundli/KaalSarpaDosha';
+import SadheSati  from './Components/FreeKundli/SadheSati';
+import BhavaKundli from './Components/FreeKundli/BhavaKundli';
 const AppContent = () => {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -61,20 +78,25 @@ const AppContent = () => {
     };
   }, [isSidebarOpen]);
 
-  const isHomePage = location.pathname === "/";
+  // ✅ routes where sidebar should NOT appear
+  const noSidebarRoutes = ["/", "/panchang", "/login", "/kp", "/festival", "/bookpooja", "/MobPooja", "/showallastrologer", location.pathname.startsWith("/festival/") && location.pathname];
+
+
+
+  const hideSidebar = noSidebarRoutes.includes(location.pathname);
 
   return (
     <>
-      {/* ✅ Navbar always on top */}
+      {/*  Navbar always on top */}
       <Navbar toggleSidebar={toggleSidebar} />
 
       <div style={{ display: "flex", marginTop: "30px", flex: 1 }}>
-        {/* ✅ Sidebar only if not home */}
-        {!isHomePage && (
+        {/*  Sidebar hidden on selected routes */}
+        {!hideSidebar && (
           <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         )}
 
-        {/* ✅ Main Content */}
+        {/*  Main Content */}
         <main style={{ flex: 1, padding: "10px" }}>
           <Routes>
             <Route
@@ -96,35 +118,31 @@ const AppContent = () => {
             />
 
             {/* navbar links*/}
-            <Route path="/freekundli" element={<FreeKundli/>} />
-            <Route path="/kundlimatching" element={<KundliMatching/>} />
-            <Route path="/panchang" element={<Panchange/>} />
-            <Route path="/panchang" element={<Kp/>} />
-            <Route path="/festival" element={<Festival/>} />
-            <Route path="/bookpooja" element={<BookPuja/>} />
-            <Route path="/MobPooja" element={<MobPooja/>} />
-            <Route path="/FreeKundli_Controller/HoroscopeCharts" element={<div>Horoscope Charts Page</div>} />
-            <Route path="/FreeKundli_Controller/ManglikDosha" element={<div>Manglik Dosha Page</div>} />
-            <Route path="/FreeKundli_Controller/KaalSarpaDosha" element={<div>Kaal Sarpa Dosha Page</div>} />
-            <Route path="/FreeKundli_Controller/SadheSati" element={<div>Sadhe Sati Page</div>} />
-            <Route path="/FreeKundli_Controller/BhavaKundli" element={<div>Bhava Kundli Page</div>} />
-            
-            <Route path="/kundlimatching" element={<KundliMatching/>} />
-            <Route path="/panchang" element={<div>Panchang Page</div>} />
-            <Route path="/kp" element={<div>KP Page</div>} />
-            <Route path="/festival" element={<div>Festival Page</div>} />
-            <Route path="/bookpooja" element={<div>Book Puja Page</div>} />
-            <Route path="/MobPooja" element={<div>Mob Pooja Page</div>} />
-            <Route path="/UserProfile" element={<div>User Profile Page</div>} />
-            <Route path="/Notification" element={<div>Notifications Page</div>} />
-            <Route path="/Orders" element={<div>Orders Page</div>} />
-            <Route path="/Cart" element={<div>Cart Page</div>} />
-            <Route path="/Following" element={<div>Following Page</div>} />
-            <Route path="/CustomerSupport" element={<div>Customer Support Page</div>} />
-            <Route path="/Login" element={<div>Login Page</div>} />
-            <Route path="/Logout" element={<div>Logout Page</div>} />
-            <Route path="/wallet" element={<div>Wallet Page</div>} />
-            <Route path="/User/change_language/:lang" element={<div>Language Change Page</div>} />
+            <Route path="/freekundli" element={<FreeKundli />} />
+            <Route path="/kundlimatching" element={<KundliMatching />} />
+            <Route path="/panchang" element={<><Panchange /><Footer /></>} />  {/* 🚫 Sidebar hidden here */}
+            <Route path='/kp' element={<><Kp /><Footer /></>} />
+            <Route path="/festival" element={<><Festival /><Footer /></>} />
+            <Route path="/festival/:id" element={<><FestivalDetails /><Footer /></>} />
+            <Route path="/bookpooja" element={<><BookPuja /><Footer /></>} />
+            <Route path="/MobPooja" element={<><MobPooja /><Footer /></>} />
+            <Route path="/login" element={<div>Login Page</div>} /> {/* 🚫 Sidebar hidden here */}
+            <Route path='/showallastrologer' element={<><ShowAllastrologer /><Footer /></>} />
+            <Route path='/AscendantReport' element={<><AscendantReport /></>} />
+            <Route path='/BasicAstrology' element={<><BasicAstrology /></>} />
+            <Route path='/PlanetaryPosition' element={<><PlanetaryPosition /></>} />
+            <Route path='/VimshottariDasha' element={<><Vishmotterydash /></>} />
+            <Route path='/GemstoneRecommendation' element={<><GemstoneRecommendation /></>} />
+            <Route path='/CompositeFriendship' element={<><CompositeFriendship /></>} />
+            <Route path='/Shadbala' element={<><Shadbala /></>} />
+            <Route path='/YoginiDasha' element={<><YoginiDasha /></>} />
+            <Route path='/HoroscopeCharts' element={<><HoroscopeCharts /></>} />
+            <Route path='/ManglikDosha' element={<><ManglikDosha /></>} />
+            <Route path='/KaalSarpaDosha' element={<><KaalSarpaDosha /></>} />
+             <Route path='/SadheSati' element={<><SadheSati /></>} />
+              <Route path='/BhavaKundli' element={<><BhavaKundli /></>} />
+
+
           </Routes>
         </main>
       </div>

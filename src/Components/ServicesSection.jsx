@@ -15,7 +15,7 @@ const ServicesSection = () => {
   const services = [
     { link: '/freekundli', img: FreeKundliImg, title: "Free Kundli" },
     { link: '/zodiac', img: HoroscopeImg, title: "Today's Horoscope" },
-    { link: '/astrologers', img: AstrologerImg, title: "Talk to Astrologer" },
+    { link: '/showallastrologer', img: AstrologerImg, title: "Talk to Astrologer" },
     { link: '/kundlimatching', img: KundaliMatchingImg, title: "Kundali Matching" },
     { link: 'https://jyotisikamall.netlify.app/shop', img: JyotisikaMallImg, title: "Jyotisika Mall", external: true },
     { link: '/bookpooja', img: BookPoojaImg, title: "Book Pooja" },
