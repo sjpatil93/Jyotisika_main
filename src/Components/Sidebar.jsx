@@ -20,19 +20,19 @@ import Navbar from './CommanNavbar';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navItems = [
-    { path: '/FreeKundli/BasicAstrology', label: 'Basic Astrology', icon: esoteric },
-    { path: '/FreeKundli_Controller/PlanetaryPosition', label: 'Planetary Positions', icon: galaxy },
-    { path: '/FreeKundli_Controller/VimshottariDasha', label: 'Vimshottari Dasha', icon: magicBook },
-    { path: '/FreeKundli_Controller/AscendantReport', label: 'Ascendant Report', icon: book },
-    { path: '/FreeKundli_Controller/GemstoneRecommendation', label: 'Gemstone Recommendation', icon: diamond },
-    { path: '/FreeKundli_Controller/CompositeFriendship', label: 'Composite Friendship', icon: friendship },
-    { path: '/FreeKundli_Controller/Shadbala', label: 'Shadbala', icon: parchment },
-    { path: '/FreeKundli_Controller/YoginiDasha', label: 'Yogini Dasha', icon: sun },
-    { path: '/FreeKundli_Controller/HoroscopeCharts', label: 'Horoscope Charts', icon: horoscopecharts },
-    { path: '/FreeKundli_Controller/ManglikDosha', label: 'Manglik Dosha', icon: mangal },
-    { path: '/FreeKundli_Controller/KaalSarpaDosha', label: 'Kaal Sarpa Dosha', icon: king },
-    { path: '/FreeKundli_Controller/SadheSati', label: 'Sadhe Sati', icon: sadhesati },
-    { path: '/FreeKundli_Controller/BhavaKundli', label: 'Bhava Kundli', icon: houses },
+    { path: '/BasicAstrology', label: 'Basic Astrology', icon: esoteric },
+    { path: '/PlanetaryPosition', label: 'Planetary Positions', icon: galaxy },
+    { path: '/VimshottariDasha', label: 'Vimshottari Dasha', icon: magicBook },
+    { path: '/AscendantReport', label: 'Ascendant Report', icon: book },
+    { path: '/GemstoneRecommendation', label: 'Gemstone Recommendation', icon: diamond },
+    { path: '/CompositeFriendship', label: 'Composite Friendship', icon: friendship },
+    { path: '/Shadbala', label: 'Shadbala', icon: parchment },
+    { path: '/YoginiDasha', label: 'Yogini Dasha', icon: sun },
+    { path: '/HoroscopeCharts', label: 'Horoscope Charts', icon: horoscopecharts },
+    { path: '/ManglikDosha', label: 'Manglik Dosha', icon: mangal },
+    { path: '/KaalSarpaDosha', label: 'Kaal Sarpa Dosha', icon: king },
+    { path: '/SadheSati', label: 'Sadhe Sati', icon: sadhesati },
+    { path: '/BhavaKundli', label: 'Bhava Kundli', icon: houses },
   ];
 
   const handleClose = (e) => {

@@ -1,4 +1,12 @@
 /* Existing Navbar, Sidebar, Header Styles */
+/* ---- Bootstrap CSS (first) ---- */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* ---- Tailwind (after Bootstrap) ---- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
     --yellow: #fe9c13;
     --yellow-dark: #e88712;
@@ -16,7 +24,7 @@
     min-width: 220px;
     height: calc(100vh - 56px);
     background: var(--yellow-dark);
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     display: flex;
@@ -317,7 +325,7 @@
         transition: background 0.2s, color 0.2s;
     }
     #user-sidebar {
-        position: relative;
+        position: sticky;
         left: 0;
         top: 56px;
         width: 100vw;
@@ -434,7 +442,7 @@
     }
     #user-sidebar {
         display: flex;
-        position: relative;
+        position: sticky;
         top: 0;
         left: 0;
     }
