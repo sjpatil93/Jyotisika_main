@@ -38,6 +38,25 @@
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .navbar-controls {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px 0;
+  }
+}
+
+
 .user-sidebar-logo {
     padding: 1.5rem 1.5rem 1rem 1.5rem;
     text-align: center;

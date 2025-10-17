@@ -90,7 +90,7 @@ const App = () => {
       {/*  Navbar always on top */}
       <Navbar toggleSidebar={toggleSidebar} />
 
-      <div style={{ display: "flex", marginTop: "30px", flex: 1 }}>
+      <div style={{ display: "flex", marginTop: "", flex: 1 }}>
         {/*  Sidebar hidden on selected routes */}
         {!hideSidebar && (
           <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
