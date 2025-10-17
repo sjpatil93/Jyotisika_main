@@ -270,13 +270,13 @@ const HoroscopeCharts = () => {
               </Link>
             </div>
 
-            <div className="position-relative w-100 bg-white overflow-hidden mb-5 ">
-              <img src={freekundli} alt="Free Kundli" className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" />
-              <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-              <div className="position-absolute top-25 end-0 w-75 p-3 text-end">
-                <h2 className="text-warning fw-bold fs-4 text-start">Horoscope Chart Analysis</h2>
-                <p className="text-light small text-start">Discover your cosmic blueprint with our comprehensive Horoscope Chart analysis.</p>
-              </div>
+            <div className="position-relative w-100 mb-4">
+              <img
+                src={freekundli}
+                alt="Free Kundli"
+                className="w-100"
+                style={{ height: '250px', objectFit: 'cover' }} /* TODO: responsive heights */
+              />
             </div>
 
             <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-4 mb-4">
@@ -399,8 +399,8 @@ const HoroscopeCharts = () => {
             {/* Features */}
             <div className="row row-cols-1 row-cols-md-3 g-4 mt-4">
               {[{ img: moonStars, title: 'Planetary Analysis', desc: 'Detailed analysis of planets' },
-                { img: favorite, title: 'Love & Marriage', desc: 'Insights into romance & compatibility' },
-                { img: diamond, title: 'Remedies & Gems', desc: 'Personalized gemstone recommendations' }
+              { img: favorite, title: 'Love & Marriage', desc: 'Insights into romance & compatibility' },
+              { img: diamond, title: 'Remedies & Gems', desc: 'Personalized gemstone recommendations' }
               ].map((item, i) => (
                 <div key={i} className="col text-center" style={{ cursor: 'pointer' }} onClick={() => window.location.href = baseUrl}>
                   <img src={item.img} alt={item.title} className="img-fluid mb-2" style={{ width: '40px', height: '40px' }} />
